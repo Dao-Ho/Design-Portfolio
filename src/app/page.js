@@ -1,11 +1,13 @@
 "use client"
+import Navbar from './components/Navbar'
 
 export default function Home() {
   return (
     <div>
-     <h1 className="flex justify-center align-center text-5xl">
-      Dao's Portfolio
-     </h1>
-  </div>
+    <Navbar />
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
+    </div>
+    </div>
+    
   )
 }
