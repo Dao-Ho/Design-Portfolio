@@ -6,19 +6,15 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {  
-    colors: {
-      'beige': '#cfcaac',
-      'darkgreen': '#555843',
-      'darkergreen': '#071104',
-      'lightgreen': '#A7D397',
-      'black': '#000000',
-      'white': '#FFFFFF',
-      'gray': '#D0D4CA',
-    },
+  theme: { 
 
     extend: {
+      backgroundImage: {
+        "transaction": "url('/transactionbackdrop.png')",
+      },
     },
   },
   plugins: [],
+
 }
+

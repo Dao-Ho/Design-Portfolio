@@ -1,13 +1,12 @@
 "use client"
 import Navbar from './components/Navbar'
+import { FirstSlide } from './components/FirstSlide'
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
     <Navbar />
-    <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
+    <FirstSlide />
     </div>
-    </div>
-    
   )
 }

@@ -4,3 +4,9 @@
 
 body {background-color: #f1f1f1;
 }
+
+@layer base {
+    html {
+      @apply scroll-smooth;
+    }
+  }
