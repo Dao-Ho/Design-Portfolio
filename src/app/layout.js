@@ -1,10 +1,30 @@
-import { Inter } from 'next/font/google'
-import { Bebas_Neue } from 'next/font/google'
+import { Inter, Bebas_Neue, Libre_Baskerville, Roboto } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
-const bebas = Bebas_Neue({ subsets: ['latin'], weight: '400' })
+const fontbebas = Bebas_Neue({
+  subsets: ['latin'],
+  variable: '--font-bebas',
+  weight: '400'
+})
+
+const fontroboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: '400'
+})
+
+const fontlibre = Libre_Baskerville({
+  subsets: ['latin'],
+  variable: '--font-libre',
+  weight: '400'
+})
+
+
 
 export const metadata = {
   title: 'Dao Ho',
@@ -14,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable}`}>{children}</body>
     </html>
     
   )
