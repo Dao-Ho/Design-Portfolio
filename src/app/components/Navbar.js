@@ -1,5 +1,6 @@
 import Image from "next/image";
 import iglogo from '../../../public/Images/black ig logo.png'
+import { Link } from 'react-scroll';
 
 function ig() {
   return (
@@ -13,6 +14,7 @@ function ig() {
     </a>
   );
 }
+
 
 const Navbar = () => {
     return (
@@ -29,9 +31,22 @@ const Navbar = () => {
         </div> */}
         <div className="flex pr-[3vw]">
         <div className="flex pr-[3vw] items-center h-full items-center">
-          <h1>
-            about me
-          </h1>
+          <Link
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={0} className="font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer">
+            Artworks
+          </Link>
+        </div>
+        <div className="flex pr-[3vw] items-center h-full items-center">
+          <Link
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={0} className="font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer">
+            About
+          </Link>
         </div>
         <div className="flex items-center h-full w-[3vw]">
         { ig() } 
