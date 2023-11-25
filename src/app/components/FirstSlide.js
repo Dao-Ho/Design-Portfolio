@@ -27,12 +27,12 @@ export const ViewButton = () => {
       spy={true}
       smooth={true}
       duration={0}
-      className="relative cursor-pointer inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+      className="relative cursor-pointer inline-flex items-center justify-start py-[1vh] pl-[1vw] pr-[4vw] overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-[1vw] hover:pr-[4vw] bg-gray-50 group"
     >
-      <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
-      <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+      <span className="absolute bottom-0 left-0 w-full h-[0.75vh] transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
+      <span className="absolute right-0 pr-[1vw] duration-200 ease-out group-hover:translate-x-12">
         <svg
-          className="w-5 h-5 text-black"
+          className="w-[1.25vw] h-auto text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -46,9 +46,9 @@ export const ViewButton = () => {
           ></path>
         </svg>
       </span>
-      <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+      <span className="absolute left-0 pl-[0.5vw] -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
         <svg
-          className="w-5 h-5 text-white"
+          className="w-[1.25vw] h-auto text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ export const ViewButton = () => {
           ></path>
         </svg>
       </span>
-      <span className="relative w-full text-left text-[1vw] transition-colors duration-200 ease-in-out group-hover:text-white">
+      <span className="relative translate-x-[1.25vw] w-full text-left text-[1vw] transition-colors duration-200 ease-in-out group-hover:text-white">
         View All
       </span>
     </Link>
