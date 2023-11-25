@@ -32,11 +32,11 @@ const Navbar = () => {
         <div className="flex pr-[3vw]">
         <div className="flex pr-[3vw] items-center h-full items-center">
           <Link
-          to="about"
+          to="artworks"
           spy={true}
           smooth={true}
           duration={0} className="font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer">
-            Artworks
+            Works
           </Link>
         </div>
         <div className="flex pr-[3vw] items-center h-full items-center">
@@ -47,6 +47,13 @@ const Navbar = () => {
           duration={0} className="font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer">
             About
           </Link>
+        </div>
+        <div className="flex pr-[3vw] items-center h-full items-center">
+          <a 
+          href="mailto:daohoart@gmail.com"
+          duration={0} className="font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer">
+            Contact
+          </a>
         </div>
         <div className="flex items-center h-full w-[3vw]">
         { ig() } 

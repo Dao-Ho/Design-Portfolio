@@ -15,7 +15,9 @@ export default function Home() {
     <Element name="about">
       <SecondSlide/>
     </Element>
+    <Element name="artworks">
     <Artworks/>
+    </Element>
     </div>
   )
 }

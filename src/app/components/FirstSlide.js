@@ -3,7 +3,7 @@ import { React } from "react";
 import transaction from "../../../public/Images/transaction final.png";
 import fishmarket from "../../../public/Images/Fish Market refined.jpg";
 import backelement from "../../../public/Images/website background.png";
-import haku from "../../../public/Images/Haku final w signature.jpg";
+import haku from "../../../public/Images/haku final refined.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
 import {
@@ -18,12 +18,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
+import { Link } from 'react-scroll';
+
 
 export const ViewButton = () => {
   return (
-    <a
-      href="#_"
-      className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+    <Link
+      to="artworks"
+      spy={true}
+      smooth={true}
+      duration={0}
+      className="relative cursor-pointer inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
     >
       <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
       <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -61,7 +66,7 @@ export const ViewButton = () => {
       <span className="relative w-full text-left text-[1vw] transition-colors duration-200 ease-in-out group-hover:text-white">
         View All
       </span>
-    </a>
+    </Link>
   );
 };
 
@@ -128,6 +133,7 @@ function slide1() {
         alt=""
         className="fill rounded-xl"
         style={{ width: "50wh", height: "auto" }}
+        placeholder="blur"
       />
     </div>
   );
@@ -141,6 +147,7 @@ function slide2() {
       alt=""
       className="fill rounded-xl"
       style={{ width: "50wh", height: "auto" }}
+      placeholder="blur"
     />
   );
 }
@@ -150,10 +157,11 @@ function slide3() {
     <div className="flex w-auto h-[70vh] span">
       <Image
         src={haku}
-        quality={100}
+        quality={65}
         alt=""
         className="fill rounded-xl"
-        style={{ width: "auto", height: "70vh" }}
+        style={{ width: "auto", height: "65vh" }}
+        placeholder="blur"
       />
       <div className="flex h-full w-full items-center translate-x-[1vw]"></div>
     </div>
