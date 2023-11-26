@@ -143,7 +143,7 @@ function slide2() {
   return (
     <Image
       src={fishmarket}
-      quality={40}
+      quality={30}
       alt=""
       priority={true}
       className="fill rounded-xl"
@@ -158,7 +158,7 @@ function slide3() {
     <div className="flex w-auto h-[70vh] span">
       <Image
         src={haku}
-        quality={40}
+        quality={30}
         alt=""
         priority={true}
         className="fill rounded-xl"

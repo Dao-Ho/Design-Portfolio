@@ -35,7 +35,7 @@ function Modal({ src, alt, onClose }) {
         <div ref={modalRef} className="relative modal-content">
           <Image 
           src={src} 
-          quality={75}
+          quality={70}
            alt={alt} 
            priority={true}
            placeholder="blur" 
