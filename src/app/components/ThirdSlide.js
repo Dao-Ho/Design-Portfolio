@@ -35,7 +35,7 @@ function Modal({ src, alt, onClose }) {
         <div ref={modalRef} className="relative modal-content">
           <Image 
           src={src} 
-          quality={80}
+          quality={75}
            alt={alt} 
            priority={true}
            placeholder="blur" 
@@ -61,7 +61,7 @@ function Modal({ src, alt, onClose }) {
       <div className="cursor-pointer inline-flex flex flex-col" onClick={handleImageClick}>
         <Image
           src={src}
-          quality={40}
+          quality={30}
           alt={alt}
           placeholder="blur"
           className="fill w-auto h-full max-w-[80vw] transition ease-in-out delay-50 hover:scale-105"

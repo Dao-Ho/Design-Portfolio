@@ -128,7 +128,7 @@ function slide1() {
     <div>
       <Image
         src={transaction}
-        quality={40}
+        quality={30}
         alt=""
         className="fill rounded-xl"
         priority={true}
