@@ -78,7 +78,7 @@ export const FirstSlide = () => {
     <div className="box-border h-screen w-screen relative">
       <div className="relative">
         <div className="h-screen w-screen">
-          <div className="flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] float-right items-center">
+          <div className="flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] float-right items-center cursor-grab active:cursor-grabbing">
             <Swiper
               id={"showcase"}
               modules={[Navigation, Pagination, Scrollbar, Autoplay]}
@@ -128,9 +128,10 @@ function slide1() {
     <div>
       <Image
         src={transaction}
-        quality={50}
+        quality={40}
         alt=""
         className="fill rounded-xl"
+        priority={true}
         style={{ width: "50wh", height: "auto" }}
         placeholder="blur"
       />
@@ -142,8 +143,9 @@ function slide2() {
   return (
     <Image
       src={fishmarket}
-      quality={50}
+      quality={40}
       alt=""
+      priority={true}
       className="fill rounded-xl"
       style={{ width: "50wh", height: "auto" }}
       placeholder="blur"
@@ -156,8 +158,9 @@ function slide3() {
     <div className="flex w-auto h-[70vh] span">
       <Image
         src={haku}
-        quality={65}
+        quality={40}
         alt=""
+        priority={true}
         className="fill rounded-xl"
         style={{ width: "auto", height: "65vh" }}
         placeholder="blur"

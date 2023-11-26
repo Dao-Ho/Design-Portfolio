@@ -33,7 +33,13 @@ function Modal({ src, alt, onClose }) {
     return createPortal(
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 backdrop-blur-sm flex justify-center items-center z-50">
         <div ref={modalRef} className="relative modal-content">
-          <Image src={src} quality={100} alt={alt} placeholder="blur" className="w-auto h-[90vh] max-w-full max-h-full" />
+          <Image 
+          src={src} 
+          quality={100}
+           alt={alt} 
+           priority={true}
+           placeholder="blur" 
+           className="w-auto h-[90vh] max-w-full max-h-full" />
         </div>
       </div>,
       document.body
@@ -55,7 +61,7 @@ function Modal({ src, alt, onClose }) {
       <div className="cursor-pointer inline-flex flex flex-col" onClick={handleImageClick}>
         <Image
           src={src}
-          quality={50}
+          quality={40}
           alt={alt}
           placeholder="blur"
           className="fill w-auto h-full max-w-[80vw] transition ease-in-out delay-50 hover:scale-105"
