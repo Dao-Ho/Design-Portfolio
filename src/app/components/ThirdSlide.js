@@ -39,7 +39,7 @@ function Modal({ src, alt, onClose }) {
            alt={alt} 
            priority={true}
            placeholder="blur" 
-           className="w-auto h-[90vh] max-w-full max-h-full" />
+           className="w-auto h-auto max-w-full max-h-[90vh] max-w-[90vw]" />
         </div>
       </div>,
       document.body
