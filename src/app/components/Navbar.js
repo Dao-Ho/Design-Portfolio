@@ -19,8 +19,8 @@ function ig() {
 const Navbar = () => {
     return (
       <nav className="z-50 backdrop-blur bg-white/50 fixed w-full h-[10vh] shadow-xl flex justify-between">
-        <div className="flex h-full w-1/3 px-5 items-center">
-        <a href="#" className="flex-inline text-[#212121] text-[2vw] font-bold font-bebas scroll-smooth focus:scroll-smooth active:scroll-smooth">
+        <div className="inline-flex h-full w-1/3 px-5 items-center">
+        <a href="#" className="flex h-full items-center text-[#212121] text-[2.5vw] font-bold font-bebas scroll-smooth focus:scroll-smooth active:scroll-smooth">
           Beauty in the Mundane.
         </a>
         </div>
