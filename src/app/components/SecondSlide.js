@@ -57,7 +57,7 @@ export const SecondSlide = () => {
 
           <div className={isMobile? ''
           : 'float-right pr-[43vw]'}>
-          <div className={isMobile? 'absolute w-full pt-[4vh] pr-[5vw] pl-[5vw]'
+          <div className={isMobile? 'absolute w-full pt-[4vh] pr-[10vw] pl-[5vw]'
             : 'absolute w-[40vw] float-right translate-y-[5vh]'}>
             <h1 className={isMobile? 'font-libre font-bold text-[2vh] text-white' 
             : 'pt-24 font-libre font-bold text-[2vw] text-white'}>
