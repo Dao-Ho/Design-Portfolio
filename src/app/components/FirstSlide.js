@@ -34,7 +34,7 @@ export const FirstSlide = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 750); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= window.innerHeight); // Adjust the breakpoint as needed
     };
   
     // Set initial screen size
@@ -62,7 +62,8 @@ export const FirstSlide = () => {
         <span className="absolute bottom-0 left-0 w-full h-[0.75vh] transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
         <span className="absolute right-0 pr-[1vw] duration-200 ease-out group-hover:translate-x-12">
           <svg
-            className="w-[1.25vw] h-auto text-black"
+            className={isMobile? ''
+            : 'w-[1.25vw] h-auto text-black'}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -78,7 +79,8 @@ export const FirstSlide = () => {
         </span>
         <span className="absolute left-0 pl-[0.5vw] -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
           <svg
-            className="w-[1.25vw] h-auto text-white"
+            className={isMobile? ''
+            : 'w-[1.25vw] h-auto text-white'}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -92,7 +94,8 @@ export const FirstSlide = () => {
             ></path>
           </svg>
         </span>
-        <span className="relative translate-x-[1.25vw] w-full text-left text-[1vw] transition-colors duration-200 ease-in-out group-hover:text-white">
+        <span className={isMobile? 'relative translate-x-[1.25vw] w-full text-left text-[4vw] transition-colors font-bold duration-200 ease-in-out group-hover:text-white'
+          : 'relative translate-x-[1.25vw] w-full text-left text-[1vw] transition-colors duration-200 ease-in-out group-hover:text-white'}>
           View All
         </span>
       </Link>
@@ -152,8 +155,10 @@ export const FirstSlide = () => {
   return (
     <div className="box-border h-screen w-screen relative">
       <div className="relative">
-        <div className={` ${isMobile ? 'flex h-screen w-screen justify-center' : 'h-screen w-screen'}`}>
-          <div className={`${isMobile ? 'translate-x-[15vw] translate-y-[30vh] w-auto h-auto max-w-[70vw] max-h-[50vh]' : 'flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] items-center float-right cursor-grab active:cursor-grabbing'}`}>
+        <div className={` ${isMobile ? 'flex h-screen w-screen justify-center' 
+        : 'h-screen w-screen'}`}>
+          <div className={`${isMobile ? 'translate-y-[35vh] pt-[4vh] w-auto h-auto max-w-[70vw] max-h-[50vh]' 
+          : 'flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] items-center float-right cursor-grab active:cursor-grabbing'}`}>
             <Swiper
               id={"showcase"}
               modules={[Navigation, Pagination, Scrollbar, Autoplay]}
@@ -178,18 +183,27 @@ export const FirstSlide = () => {
             <div className="pl-[1vw]"></div>
           </div>
 
-          <div className={` ${isMobile? 'w-screen h-[30vh] ' : 'h-screen w-1/2 absolute items-center'}`}>
-            <div className={` ${isMobile? '' : 'flex-inline translate-y-[20vh]'}`}>
-              <h1 className={` ${isMobile? '' :'font-inter font-bold text-[#212121] text-[15vw] leading-[12vw]'}`}>
+          <div className={` ${isMobile? 'absolute translate-y-[15vh] w-[100vw] h-[20vh] translate-x-[15vw]' : 'h-screen w-1/2 absolute items-center'}`}>
+            <div className={` ${isMobile? 'w-screen h-full' 
+            : 'flex-inline translate-y-[20vh]'}`}>
+              {isMobile? <h1 className="
+              'font-inter font-bold text-[#212121] text-[17.5vw] leading-[12vw]">
+                DAO HO 
+              </h1> 
+              :
+              <h1 className="font-inter font-bold text-[#212121] text-[15vw] leading-[12vw]">
                 DAO <br />
-                HO
-              </h1>
-              <p className={`font-bebas italic text-[#212121] font-bold ${isMobile? '' : 'pt-5 pl-3  text-[2vw] '}`}>
+                HO 
+              </h1>}
+              <p className={`font-bebas italic text-[#212121] font-bold 
+              ${isMobile? 'pt-[2vh] pl-[5vw]  text-[5vw]' 
+              : 'pt-5 pl-3  text-[2vw] '}`}>
                 &lt;Developer + Artist + Designer/&gt;
               </p>
             </div>
           </div>
-          <div className={`  ${isMobile? 'absolute flex w-screen justify-center translate-y-[80vh]' : 'px-[3vw] absolute flex w-auto translate-y-[45vh] right-0'}`}>
+          <div className={`  ${isMobile? 'absolute flex w-screen justify-center translate-y-[85vh] pt-[3vh]' 
+          : 'px-[3vw] absolute flex w-auto translate-y-[45vh] right-0'}`}>
             <ViewButton />
           </div>
         </div>
