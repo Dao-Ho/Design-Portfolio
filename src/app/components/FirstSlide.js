@@ -183,8 +183,8 @@ export const FirstSlide = () => {
             <div className="pl-[1vw]"></div>
           </div>
 
-          <div className={` ${isMobile? 'absolute translate-y-[15vh] w-[100vw] h-[20vh] translate-x-[15vw]' : 'h-screen w-1/2 absolute items-center'}`}>
-            <div className={` ${isMobile? 'w-screen h-full' 
+          <div className={` ${isMobile? 'flex absolute translate-y-[15vh] w-[100vw] h-[20vh] justify-center' : 'h-screen w-1/2 absolute items-center'}`}>
+            <div className={` ${isMobile? 'h-full' 
             : 'flex-inline translate-y-[20vh]'}`}>
               {isMobile? <h1 className="
               'font-inter font-bold text-[#212121] text-[17.5vw] leading-[12vw]">
@@ -196,7 +196,7 @@ export const FirstSlide = () => {
                 HO 
               </h1>}
               <p className={`font-bebas italic text-[#212121] font-bold 
-              ${isMobile? 'pt-[2vh] text-[5vw]' 
+              ${isMobile? 'flex pt-[2vh] text-[5vw] justify-center' 
               : 'pt-5 pl-3  text-[2vw] '}`}>
                 &lt;Developer + Artist + Designer/&gt;
               </p>
