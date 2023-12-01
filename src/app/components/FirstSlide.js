@@ -34,7 +34,7 @@ export const FirstSlide = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= window.innerHeight); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= window.innerHeight);
     };
   
     // Set initial screen size
@@ -173,13 +173,13 @@ export const FirstSlide = () => {
               <p className={`font-bebas italic text-[#212121] font-bold 
               ${isMobile? 'flex pt-[2vh] text-[5vw] justify-center' 
               : 'pt-5 pl-3  text-[2vw] '}`}>
-                &lt;Developer + Artist + Designer/&gt;
+              &lt;Developer + Artist + Designer/&gt;
               </p>
             </div>
           </div>
           <div className={isMobile? 'flex w-screen justify-center' : ''}>
           <div className={`${isMobile ? 'flex pt-[2vh] w-auto h-auto max-w-[70vw] max-h-[50vh]' 
-          : 'flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] items-center float-right cursor-grab active:cursor-grabbing'}`}>
+          : 'flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-screen w-[45vw] items-center float-right cursor-grab active:cursor-grabbing'}`}>
             <Swiper
               id={"showcase"}
               modules={[Navigation, Pagination, Scrollbar, Autoplay]}
