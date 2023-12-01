@@ -68,8 +68,6 @@ export const SecondSlide = () => {
             </h1>
             </div>
           </div>
-         
-          
         </div>
       </div>
     </div>
