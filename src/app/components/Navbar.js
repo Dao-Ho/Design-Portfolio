@@ -44,7 +44,7 @@ const Navbar = () => {
       <nav className="z-50 backdrop-blur bg-white/50 fixed w-full h-[10vh] shadow-xl flex justify-between">
         <div className={isMobile? 'inline-flex h-full w-1/2 px-5 items-center'
           : 'inline-flex h-full w-1/3 px-5 items-center'}>
-        <a href="#" className={isMobile? 'flex h-full items-center text-[#212121] text-[5vw] font-bold font-bebas scroll-smooth focus:scroll-smooth active:scroll-smooth'
+        <a href="#" className={isMobile? 'flex h-full items-center text-[#212121] text-[4vw] font-bold font-bebas scroll-smooth focus:scroll-smooth active:scroll-smooth'
         : 'flex h-full items-center text-[#212121] text-[2.5vw] font-bold font-bebas scroll-smooth focus:scroll-smooth active:scroll-smooth'}>
           Beauty in the Mundane.
         </a>
