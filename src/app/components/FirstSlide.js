@@ -155,9 +155,30 @@ export const FirstSlide = () => {
   return (
     <div className="box-border h-screen w-screen relative">
       <div className="relative">
-        <div className={` ${isMobile ? 'flex h-screen w-screen justify-center' 
+        <div className={` ${isMobile ? 'flex-row h-screen w-screen justify-center' 
         : 'h-screen w-screen'}`}>
-          <div className={`${isMobile ? 'translate-y-[35vh] pt-[4vh] w-auto h-auto max-w-[70vw] max-h-[50vh]' 
+
+          <div className={` ${isMobile? 'flex pt-[15vh] w-[100vw] justify-center' : 'h-screen w-1/2 absolute items-center'}`}>
+            <div className={` ${isMobile? 'h-full' 
+            : 'flex-inline translate-y-[20vh]'}`}>
+              {isMobile? <h1 className="
+              'font-inter font-bold text-[#212121] text-[17.5vw] leading-[12vw]">
+                DAO HO 
+              </h1> 
+              :
+              <h1 className="font-inter font-bold text-[#212121] text-[15vw] leading-[12vw]">
+                DAO <br />
+                HO 
+              </h1>}
+              <p className={`font-bebas italic text-[#212121] font-bold 
+              ${isMobile? 'flex pt-[2vh] text-[5vw] justify-center' 
+              : 'pt-5 pl-3  text-[2vw] '}`}>
+                &lt;Developer + Artist + Designer/&gt;
+              </p>
+            </div>
+          </div>
+          <div className={isMobile? 'flex w-screen justify-center' : ''}>
+          <div className={`${isMobile ? 'flex pt-[2vh] w-auto h-auto max-w-[70vw] max-h-[50vh]' 
           : 'flex z-30 pt-20 pr-[2vw] -translate-x-[10vw] h-full w-[45vw] items-center float-right cursor-grab active:cursor-grabbing'}`}>
             <Swiper
               id={"showcase"}
@@ -182,27 +203,9 @@ export const FirstSlide = () => {
             </Swiper>
             <div className="pl-[1vw]"></div>
           </div>
-
-          <div className={` ${isMobile? 'flex absolute translate-y-[15vh] w-[100vw] h-[20vh] justify-center' : 'h-screen w-1/2 absolute items-center'}`}>
-            <div className={` ${isMobile? 'h-full' 
-            : 'flex-inline translate-y-[20vh]'}`}>
-              {isMobile? <h1 className="
-              'font-inter font-bold text-[#212121] text-[17.5vw] leading-[12vw]">
-                DAO HO 
-              </h1> 
-              :
-              <h1 className="font-inter font-bold text-[#212121] text-[15vw] leading-[12vw]">
-                DAO <br />
-                HO 
-              </h1>}
-              <p className={`font-bebas italic text-[#212121] font-bold 
-              ${isMobile? 'flex pt-[2vh] text-[5vw] justify-center' 
-              : 'pt-5 pl-3  text-[2vw] '}`}>
-                &lt;Developer + Artist + Designer/&gt;
-              </p>
-            </div>
           </div>
-          <div className={`  ${isMobile? 'absolute flex w-screen justify-center translate-y-[85vh] pt-[3vh]' 
+          
+          <div className={`  ${isMobile? 'absolute flex w-screen justify-center pt-[3vh]' 
           : 'px-[3vw] absolute flex w-auto translate-y-[45vh] right-0'}`}>
             <ViewButton />
           </div>
