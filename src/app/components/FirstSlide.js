@@ -196,7 +196,7 @@ export const FirstSlide = () => {
                 HO 
               </h1>}
               <p className={`font-bebas italic text-[#212121] font-bold 
-              ${isMobile? 'pt-[2vh] pl-[5vw]  text-[5vw]' 
+              ${isMobile? 'pt-[2vh] text-[5vw]' 
               : 'pt-5 pl-3  text-[2vw] '}`}>
                 &lt;Developer + Artist + Designer/&gt;
               </p>
