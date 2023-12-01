@@ -15,7 +15,7 @@ export const SecondSlide = () => {
         src={sideprofile}
         quality={100}
         alt=""
-        className={isMobile? 'w-auto h-full max-h-[60vh] max-w-[90vw]' 
+        className={isMobile? 'w-full h-auto max-h-[70vh] max-w-[95vw]' 
         : ' w-full h-auto max-h-[70vh] max-w-[50vw]'}
       />
     );
@@ -57,9 +57,9 @@ export const SecondSlide = () => {
 
           <div className={isMobile? ''
           : 'float-right w-[50vw]'}>
-          <div className={isMobile? 'absolute w-[40vw] pl-[5vw]'
+          <div className={isMobile? 'absolute w-full pt-[4vh] pr-[5vw] pl-[5vw]'
             : 'absolute w-[40vw] float-right translate-y-[5vh]'}>
-            <h1 className={isMobile? 'pt-24 font-libre font-bold text-[2.5vh] text-white' 
+            <h1 className={isMobile? 'font-libre font-bold text-[2vh] text-white' 
             : 'pt-24 font-libre font-bold text-[2vw] text-white'}>
               Dao Ho is an 18-year-old self-taught artist studying at
               Northeastern University. With a focus on ink, he combines various
