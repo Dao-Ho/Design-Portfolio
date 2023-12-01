@@ -50,13 +50,13 @@ export const SecondSlide = () => {
           
 
 
-            <div className={isMobile? ' absolute flex w-auto h-[80vh] items-end translate-x-[5vw]' 
-          : 'absolute flex h-[90vh] translate-x-[5vw] items-end translate'}>
+            <div className={isMobile? ' absolute flex w-auto h-[80vh] pr-[11vw] items-end translate-x-[5vw] ' 
+          : 'absolute flex h-[90vh] translate-x-[5vw] items-end translate '}>
             {pfp()}
           </div>
 
           <div className={isMobile? ''
-          : 'float-right w-[50vw]'}>
+          : 'float-right pr-[43vw]'}>
           <div className={isMobile? 'absolute w-full pt-[4vh] pr-[5vw] pl-[5vw]'
             : 'absolute w-[40vw] float-right translate-y-[5vh]'}>
             <h1 className={isMobile? 'font-libre font-bold text-[2vh] text-white' 
