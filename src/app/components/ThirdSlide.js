@@ -119,12 +119,13 @@ export const Artworks = () => {
     </div>
   </div>
   <div className="flex-row w-screen justify-center space-y-[5vh] pt-[5vw]">
+    <div className="flex h-[100vh]">
       <div className="flex w-screen justify-center h-[80vh]">
           <div className="flex w-[85vw] ">
             <ImageCaption src={transaction} alt="" title="The Transaction" caption="11x14, 2023" award="Best in Show: James Laubheimer's Award" award2="Baltimore Watercolor Society Award for Excellence in Water-Media" award3="Schwab Lipowitz & Solter 1st Place award"/>
           </div>
       </div>
-
+      </div>
       <div className="flex h-[100vh]">
         <div className="flex w-screen justify-center h-[80vh]">
           <div className="flex w-[85vw] ">
