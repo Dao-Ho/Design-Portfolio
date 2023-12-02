@@ -111,7 +111,7 @@ export const Artworks = () => {
       <>
       {isMobile? 
 
-(<div className="box-border w-screen overflow-y">
+(<div className="box-border w-screen overflow-y"> <>
 <div className="w-full translate-y-24">
   <div className="inline-flex w-screen">
     <div className="inline-flex span translate-x-[8.5vw]">
@@ -175,7 +175,9 @@ export const Artworks = () => {
 
   </div>
   </div>
+  </>
   </div>
+
 )
       
       
