@@ -64,6 +64,7 @@ export const Artworks = () => {
           src={src} 
           quality={70}
            alt={alt}
+           priority={true}
            placeholder="blur" 
            className={isMobile? 'w-auto h-auto max-w-[85vw] max-h-[80vh] max-w-[90vw]'
             : 'w-auto h-auto max-w-full max-h-[90vh] max-w-[90vw]'} />
