@@ -16,7 +16,7 @@ export const SecondSlide = () => {
         className={
           isMobile
             ? "w-full h-auto max-h-[70vh] max-w-[95vw]"
-            : " w-full h-auto max-h-[70vh] max-w-[50vw]"
+            : " w-auto h-full max-h-[60vh] max-w-[40vw]"
         }
       />
     );
@@ -51,14 +51,14 @@ export const SecondSlide = () => {
           className={
             isMobile
               ? "box-border w-[95vw] h-[80vh] bg-gradient-to-r from-[#050505]  to-[#383e43] via-[#161a1c] rounded-[5vw]"
-              : "box-border w-[95vw] h-[90vh] bg-gradient-to-r from-[#050505]  to-[#383e43] via-[#161a1c] rounded-[5vw]"
+              : "box-border w-[95vw] h-[85vh] bg-gradient-to-r from-[#050505]  to-[#383e43] via-[#161a1c] rounded-[5vw]"
           }
         >
           <div
             className={
               isMobile
                 ? " absolute flex w-auto h-[80vh] pr-[11vw] items-end translate-x-[5vw] "
-                : "absolute flex h-[90vh] translate-x-[5vw] items-end translate "
+                : "absolute flex h-[85vh] translate-x-[5vw] items-end w-[45vw]"
             }
           >
             {pfp()}
