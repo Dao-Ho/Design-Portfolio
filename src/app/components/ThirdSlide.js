@@ -8,6 +8,7 @@ import held from "../../../public/Images/Held final refined.png";
 import engulfed from "../../../public/Images/engulfed final refined.png";
 import { useState } from "react";
 import { Container } from "postcss";
+import { motion, controls, inView, useAnimation, useInView } from 'framer-motion'
 
 import { useRef, useEffect } from 'react';
 
@@ -16,8 +17,7 @@ import { createPortal } from 'react-dom';
   
 
 export const Artworks = () => {
-
-  
+  const scrollRef = useRef(null)
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -87,7 +87,8 @@ export const Artworks = () => {
 
   
     return (
-      <div className="cursor-pointer inline-flex flex flex-col" onClick={handleImageClick}>
+      <motion.div
+      className="cursor-pointer inline-flex flex flex-col" onClick={handleImageClick}>
         <Image
           src={src}
           quality={30}
@@ -104,7 +105,7 @@ export const Artworks = () => {
                             {award3} <br/></h1>
   
         {isModalOpen && <Modal src={src} alt={alt} onClose={handleCloseModal} />}
-      </div>
+      </motion.div>
     );
   }
     
@@ -122,14 +123,20 @@ export const Artworks = () => {
   <div className="flex-row w-screen justify-center space-y-[5vh] pt-[5vw]">
     <div className="flex h-[100vh]">
       <div className="flex w-screen justify-center h-[80vh]">
-          <div className="flex w-[85vw] ">
-            <ImageCaption src={transaction} alt="" title="The Transaction" caption="11x14, 2023" award="Best in Show: James Laubheimer's Award" award2="Baltimore Watercolor Society Award for Excellence in Water-Media" award3="Schwab Lipowitz & Solter 1st Place award"/>
+          <div
+          className="flex w-[85vw] ">
+            <div>
+            <ImageCaption
+            src={transaction} alt="" title="The Transaction" caption="11x14, 2023" award="Best in Show: James Laubheimer's Award" award2="Baltimore Watercolor Society Award for Excellence in Water-Media" award3="Schwab Lipowitz & Solter 1st Place award"/>
+            </div>
           </div>
       </div>
       </div>
-      <div className="flex h-[100vh]">
+      <div 
+      className="flex h-[100vh]">
         <div className="flex w-screen justify-center h-[80vh]">
-          <div className="flex w-[85vw] ">
+          <div
+          className="flex w-[85vw] ">
           <ImageCaption src={haku} alt="" title="Haku" caption="8.5x11, 2023"/>
           </div>
       </div>

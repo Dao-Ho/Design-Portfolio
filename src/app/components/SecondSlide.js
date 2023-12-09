@@ -3,7 +3,6 @@ import Image from "next/image";
 import { React, useEffect, useState, useRef } from "react";
 import sideprofile from "../../../public/Images/website pfp.png";
 import { motion, scrollRef} from "framer-motion";
-import { Reveal } from "./Reveal";
 
 export const SecondSlide = () => {
   const scrollRef = useRef(null)
@@ -43,6 +42,7 @@ export const SecondSlide = () => {
   }, []);
 
 
+
   return (
     
     <motion.div className="box-border h-screen w-screen">
@@ -73,9 +73,9 @@ export const SecondSlide = () => {
               }
             >
               <motion.h1
-               initial={{ opacity: 0, y: 70 }}
+               initial={{ opacity: 0, y: 60 }}
                whileInView={{ opacity: 1, y: 0}}
-               transition={{duration: 0.5, delay: 0.25}}
+               transition={{duration: 0.5, delay: 0}}
                viewport={{ root: scrollRef }}
                 className={
                   isMobile
@@ -83,7 +83,7 @@ export const SecondSlide = () => {
                     : "pt-24 font-libre font-bold text-[2vw] text-white"
                 }
               >
-                Dao Ho is an 18-year-old self-taught artist studying at
+                Dao Ho is an 19-year-old self-taught artist studying at
                 Northeastern University. With a focus on ink, he combines
                 various mark-making techniques to emphasize values hidden in
                 ordinary everyday life.

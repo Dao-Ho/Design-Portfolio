@@ -5,6 +5,7 @@ import fishmarket from "../../../public/Images/Fish Market refined.png";
 import haku from "../../../public/Images/haku final refined.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
+import { motion, scrollRef} from "framer-motion";
 import {
   Navigation,
   Pagination,
@@ -161,6 +162,11 @@ export const FirstSlide = () => {
           <div className={` ${isMobile? 'flex pt-[15vh] w-[100vw] justify-center' : 'h-screen w-1/2 absolute items-center'}`}>
             <div className={` ${isMobile? 'h-full' 
             : 'flex-inline translate-y-[20vh]'}`}>
+              <motion.div
+              initial={{x: 50, opacity: 0}}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
+              >
               {isMobile? <h1 className="
               'font-inter font-bold text-[#212121] text-[17.5vw] leading-[12vw]">
                 DAO HO 
@@ -175,6 +181,7 @@ export const FirstSlide = () => {
               : 'pt-5 pl-3  text-[2vw] '}`}>
               &lt;Developer + Artist + Designer/&gt;
               </p>
+              </motion.div>
             </div>
           </div>
           <div className={isMobile? 'flex w-screen justify-center' : ''}>
