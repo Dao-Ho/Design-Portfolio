@@ -109,7 +109,7 @@ export const FirstSlide = () => {
       <div>
         <Image
           src={transaction}
-          quality={30}
+          quality={1}
           alt=""
           className="fill rounded-xl"
           priority={true}
@@ -124,7 +124,7 @@ export const FirstSlide = () => {
     return (
       <Image
         src={fishmarket}
-        quality={30}
+        quality={1}
         alt=""
         priority={true}
         className="fill rounded-xl"
@@ -139,7 +139,7 @@ export const FirstSlide = () => {
       <div className={` ${isMobile?  'flex w-auto h-[45vh] pb-5' : 'flex w-auto h-[70vh] span'}`}>
         <Image
           src={haku}
-          quality={30}
+          quality={1}
           alt=""
           priority={true}
           className="fill rounded-xl w-auto h-auto max-w-full aspect-auto max-h-[65vh]"

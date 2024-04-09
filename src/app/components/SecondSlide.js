@@ -11,7 +11,7 @@ export const SecondSlide = () => {
     return (
       <Image
         src={sideprofile}
-        quality={100}
+        quality={50}
         alt=""
         className={
           isMobile
