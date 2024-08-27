@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { React, useEffect, useState } from "react";
-import transaction from "../../../public/Images/transaction final.png";
-import fishmarket from "../../../public/Images/Fish Market refined.png";
-import haku from "../../../public/Images/haku final refined.png";
+import transaction from "../../../../public/Images/transaction final.png";
+import fishmarket from "../../../../public/Images/Fish Market refined.png";
+import haku from "../../../../public/Images/haku final refined.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
 import { motion, scrollRef} from "framer-motion";

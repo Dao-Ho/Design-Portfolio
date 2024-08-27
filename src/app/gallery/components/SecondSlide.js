@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { React, useEffect, useState, useRef } from "react";
-import sideprofile from "../../../public/Images/website pfp.png";
+import sideprofile from "../../../../public/Images/website pfp.png";
 import { motion, scrollRef} from "framer-motion";
 
 export const SecondSlide = () => {

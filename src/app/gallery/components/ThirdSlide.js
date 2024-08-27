@@ -1,11 +1,11 @@
 import Image from "next/image";
-import transaction from "../../../public/Images/transaction final.png";
-import haku from "../../../public/Images/haku final refined.png";
-import fishmarket from "../../../public/Images/Fish Market refined.png";
-import holdingon from "../../../public/Images/holding on.png";
-import duality from "../../../public/Images/FINAL selected 2.png";
-import held from "../../../public/Images/Held final refined.png";
-import engulfed from "../../../public/Images/engulfed final refined.png";
+import transaction from "../../../../public/Images/transaction final.png";
+import haku from "../../../../public/Images/haku final refined.png";
+import fishmarket from "../../../../public/Images/Fish Market refined.png";
+import holdingon from "../../../../public/Images/holding on.png";
+import duality from "../../../../public/Images/FINAL selected 2.png";
+import held from "../../../../public/Images/Held final refined.png";
+import engulfed from "../../../../public/Images/engulfed final refined.png";
 import { useState } from "react";
 import { Container } from "postcss";
 import { motion, controls, inView, useAnimation, useInView } from 'framer-motion'

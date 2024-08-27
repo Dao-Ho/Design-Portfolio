@@ -1,5 +1,5 @@
 import Image from "next/image";
-import iglogo from '../../../public/Images/black ig logo.png'
+import iglogo from '../../../../public/Images/black ig logo.png'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll';
 
