@@ -5,6 +5,7 @@ const ParticleEffect = ({isLight}) => {
   const canvasRef = useRef(null);
   //stores particle array so it doesn't need to re-render everytime the component updates
   const particlesArrayRef = useRef([]);
+  const ctxRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -12,6 +13,7 @@ const ParticleEffect = ({isLight}) => {
     const mouse = { x: null, y: null, radius: 6000 };
     const gap = 20;
     const particlesArray = particlesArrayRef.current;
+    ctxRef.current = ctx;
 
     //resive canvas to fit current viewport
     const resizeCanvas = () => {
@@ -43,11 +45,12 @@ const ParticleEffect = ({isLight}) => {
         this.vy = 0;
         this.ease = 0.2;
         this.friction = 0.95;
+        this.color = isLight ? "#262523" : "#fff7f0";
       }
 
       //draw each particle as a black square
       draw() {
-        ctx.fillStyle = isLight ? "#262523" : "#fff7f0";
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 3);
         ctx.closePath();
@@ -75,6 +78,10 @@ const ParticleEffect = ({isLight}) => {
 
         this.draw();
       }
+
+      setColor(newColor) {
+        this.color = newColor;
+      }
     }
 
     //initialize each particle in a grid pattern, space between determined by gap
@@ -88,19 +95,26 @@ const ParticleEffect = ({isLight}) => {
     };
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particlesArray.forEach((particle) => particle.update());
-      requestAnimationFrame(animate);
-    };
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach((particle) => particle.update());
+        requestAnimationFrame(animate);
+      };
+  
+      resizeCanvas();
+      animate();
+  
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("resize", resizeCanvas);
+      };
+    }, []);
 
-    resizeCanvas();
-    animate();
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", resizeCanvas);
-    };
+  useEffect(() => {
+    const particlesArray = particlesArrayRef.current;
+    const newColor = isLight ? "#262523" : "#fff7f0";
+    particlesArray.forEach((particle) => particle.setColor(newColor));
   }, [isLight]);
+
   return (
     //set canvas to size of viewport and ensure it's the bottom layer
     <canvas
