@@ -1,14 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@600&family=Libre+Baskerville&display=swap');
-
-body {background-color: #f1f1f1;
-}
-
-@layer base {
-    html {
-      @apply scroll-smooth;
-    }
-  }
-
+  
