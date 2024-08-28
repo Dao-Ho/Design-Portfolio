@@ -2,7 +2,10 @@
 import { useState } from "react";
 import ParticleEffect from "./components/particles";
 import React from "react";
-import Switch from "../components/switch";
+
+
+import NavBar from "./components/navBar";
+
 
 export default function Home() {
   const [isLight, setIsLight] = useState(true);
@@ -17,13 +20,13 @@ export default function Home() {
         isLight ? "light" : "dark"
       }`}
     >
-      <div className="absolute z-20 h-[100vh] w-[100vw]">
-        
-        <Switch isChecked={!isLight} onChange={toggleTheme} />
+      <div className="flex-col absolute z-20 h-[100vh] w-[100vw]">
+        <NavBar toggleTheme={toggleTheme} isLight={isLight} />
       </div>
       <div className="relative z-10">
         <ParticleEffect isLight={isLight} />
       </div>
+
     </div>
   );
 }

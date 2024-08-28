@@ -10,17 +10,32 @@ const ParticleEffect = ({isLight}) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const mouse = { x: null, y: null, radius: 6000 };
-    const gap = 20;
+    const mouse = { x: null, y: null, radius: 10000 };
+    const gap = 12;
     const particlesArray = particlesArrayRef.current;
     ctxRef.current = ctx;
 
     //resive canvas to fit current viewport
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    };
+        const oldWidth = canvas.width;
+        const oldHeight = canvas.height;
+  
+        //new sizes
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+  
+        //find ratio of new size relative to old
+        const widthRatio = canvas.width / oldWidth;
+        const heightRatio = canvas.height / oldHeight;
+  
+        //update the particles by increasing them by said factor
+        particlesArray.forEach((particle) => {
+          particle.x *= widthRatio;
+          particle.y *= heightRatio;
+          particle.baseX *= widthRatio;
+          particle.baseY *= heightRatio;
+        });
+      };
 
     //update coordinate to track mouse position
     const handleMouseMove = (e) => {
@@ -38,7 +53,7 @@ const ParticleEffect = ({isLight}) => {
       constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 3;
+        this.size = 1;
         this.baseX = x;
         this.baseY = y;
         this.vx = 0;
@@ -100,7 +115,9 @@ const ParticleEffect = ({isLight}) => {
         requestAnimationFrame(animate);
       };
   
-      resizeCanvas();
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
       animate();
   
       return () => {
@@ -119,7 +136,7 @@ const ParticleEffect = ({isLight}) => {
     //set canvas to size of viewport and ensure it's the bottom layer
     <canvas
       ref={canvasRef}
-      className="w-[100vw] h-[100vh] fixed top-0 left-0 z-0"
+      className="w-full h-full fixed top-0 left-0 z-0"
     />
   );
 };

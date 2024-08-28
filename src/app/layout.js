@@ -1,4 +1,4 @@
-import { Inter, Bebas_Neue, Libre_Baskerville, Roboto } from 'next/font/google'
+import { Inter, Bebas_Neue, Libre_Baskerville, Roboto, Roboto_Condensed } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -24,6 +24,12 @@ const fontlibre = Libre_Baskerville({
   weight: '400'
 })
 
+const fontRobotoCondensed = Roboto_Condensed({
+  subsets: ['latin'],
+  variable: '--font-roboto-condensed',
+  weight: '400'
+})
+
 
 
 export const metadata = {
@@ -34,7 +40,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable}`}>{children}</body>
     </html>
     
   )

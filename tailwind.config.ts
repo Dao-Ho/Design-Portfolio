@@ -45,6 +45,13 @@ module.exports = withMT({
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        inter: 'var(--font-inter)',
+        bebas: 'var(--font-bebas)',
+        roboto: 'var(--font-roboto)',
+        libre: 'var(--font-libre)',
+        robotoCondensed: 'var(--font-roboto-condensed)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate"),
@@ -52,9 +59,11 @@ module.exports = withMT({
       addBase({
         ':root': {
           '--background-color': theme('colors.light-background'),
+          '--foreground-color': theme('colors.light-foreground'),
         },
         '.dark': {
           '--background-color': theme('colors.dark-background'),
+          '--foreground-color': theme('colors.dark-foreground'),
         },
       });
     },
