@@ -9,7 +9,7 @@ export default function Switch({ isChecked, onChange }) {
         onClick={onChange}
       >
         <span 
-          className={` w-[0.85vw] min-w-[2vh] min-h-[2vh] h-[0.85vw] ml-[0.25vw] rounded-full transition-transform duration-300 border ${isChecked ? 'transform translate-x-full bg-light-background border-light-background' : 'transform translate-x-0 bg-dark-background border-dark-background'}`} 
+          className={` w-[0.95vw] min-w-[2vh] min-h-[2vh] h-[0.95vw] ml-[0.25vw] rounded-full transition-transform duration-300 border ${isChecked ? 'transform translate-x-[1.25vw] bg-light-background border-light-background' : 'transform translate-x-0 bg-dark-background border-dark-background'}`} 
         />
       </div>
     );

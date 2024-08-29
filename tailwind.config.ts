@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-const withMT = require("@material-tailwind/react/utils/withMT");
 
-
-module.exports = withMT({
+module.exports = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx,ts,tsx}',
@@ -51,6 +49,8 @@ module.exports = withMT({
         roboto: 'var(--font-roboto)',
         libre: 'var(--font-libre)',
         robotoCondensed: 'var(--font-roboto-condensed)',
+        oswald: 'var(--font-oswald)',
+        sourceSans3: 'var(--font-source-sans-3)',
       },
     },
   },
@@ -68,4 +68,4 @@ module.exports = withMT({
       });
     },
   ],
-});
+};

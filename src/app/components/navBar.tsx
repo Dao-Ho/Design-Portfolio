@@ -1,7 +1,12 @@
 import Switch from "./switch";
+import { motion } from "framer-motion";
 
 const NavBar = ({ isLight, toggleTheme }) => {
   return (
+    <motion.div
+          initial={{ y: "-7vh" }}
+          animate={{ y: "0vh" }}
+        >
     <div
       className={`flex w-[100vw] h-[7.65vh] font-bebas items-center bg-background flex-row ${
         isLight ? "light" : "dark"
@@ -38,6 +43,7 @@ const NavBar = ({ isLight, toggleTheme }) => {
         <Switch isChecked={!isLight} onChange={toggleTheme} />
       </div>
     </div>
+    </motion.div>
   );
 };
 

@@ -79,8 +79,8 @@ export const SecondSlide = () => {
                viewport={{ root: scrollRef }}
                 className={
                   isMobile
-                    ? "font-libre font-bold text-[2vh] text-white "
-                    : "pt-24 font-libre font-bold text-[2vw] text-white"
+                    ? "font-libre font-bold text-[2vh] text-background "
+                    : "pt-24 font-libre font-bold text-[2vw] text-background"
                 }
               >
                 Dao Ho is an 19-year-old self-taught artist studying at

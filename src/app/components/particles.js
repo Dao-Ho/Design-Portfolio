@@ -136,7 +136,7 @@ const ParticleEffect = ({isLight}) => {
     //set canvas to size of viewport and ensure it's the bottom layer
     <canvas
       ref={canvasRef}
-      className="w-full h-full fixed top-0 left-0 z-0"
+      className="w-[100vw] h-full fixed top-0 left-0 z-0"
     />
   );
 };

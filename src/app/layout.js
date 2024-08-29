@@ -1,4 +1,4 @@
-import { Inter, Bebas_Neue, Libre_Baskerville, Roboto, Roboto_Condensed } from 'next/font/google'
+import { Inter, Bebas_Neue, Libre_Baskerville, Roboto, Roboto_Condensed, Oswald, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -30,6 +30,18 @@ const fontRobotoCondensed = Roboto_Condensed({
   weight: '400'
 })
 
+const fontOswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+  weight: '400'
+})
+
+const fontSourceSansPro = Source_Sans_3({
+  subsets: ['latin'],
+  variable: '--font-source-sans-3',
+  weight: '400'
+})
+
 
 
 export const metadata = {
@@ -40,7 +52,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable} ${fontOswald.variable} ${fontSourceSansPro.variable} scroll-smooth overflow-x-hidden`}>{children}</body>
     </html>
     
   )
