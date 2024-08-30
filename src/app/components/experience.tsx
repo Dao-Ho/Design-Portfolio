@@ -6,13 +6,41 @@ import { useRef } from "react";
 import nusci from "../../../public/experience/nusci-current.png";
 import paynalli from "../../../public/experience/paynalli-systems-current.png";
 import neu from "../../../public/experience/NEU-current.png";
+import generate from "../../../public/experience/generate-current.png";
 
 const ExperiencePage = () => {
   const scrollRef = useRef(null);
 
   return (
     <div className={styles.parentContainer}>
-      <div className={styles.allExperiencesContainer}>
+      <div className={styles.allExperiencesContainer} id="experience">
+      <div className="flex flex-row items-center font-sourceSans3 space-x-[10vw]">
+          <motion.div
+            viewport={{ root: scrollRef }}
+            initial={{ x: -150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 100 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col justify-center w-[20vw]"
+          >
+            <h1 className="font-bold font-oswald text-[2vw] leading-[2vw]">
+              Generate Product Development
+            </h1>
+            <h1 className={styles.role}>
+              Software Engineer
+            </h1>
+            <h1 className="font-med text-[1.1vw] leading-[1.3vw] mt-[2vh]">
+            </h1>
+          </motion.div>
+          <motion.div
+            viewport={{ root: scrollRef }}
+            initial={{ x: 150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 100 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-[20vw] h-[20vw] font-roboto"
+          >
+            <Image src={generate} object="cover" layout="fill" sizes="" />
+          </motion.div>
+        </div>
         <div className={styles.experienceContainerLeft}>
           <motion.div
             viewport={{ root: scrollRef }}
@@ -112,7 +140,7 @@ const ExperiencePage = () => {
 
 const styles = {
   allExperiencesContainer: "flex flex-col mt-[20vh] space-y-[20vh]",
-  experienceContainerLeft: "flex flex-row items-center font-sourceSans3 space-x-[5vw]",
+  experienceContainerLeft: "flex flex-row items-center font-sourceSans3 space-x-[7vw]",
   parentContainer: "w-[100vw] y-overflow overflow-hidden bg-background text-foreground flex justify-center",
   companyName: "font-bold font-oswald text-[2vw] leading-[2vw]",
   role: "font-semibold font-oswald text-[1.5vw] leading-[2.5vw]",

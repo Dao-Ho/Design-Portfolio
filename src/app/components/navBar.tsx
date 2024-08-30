@@ -19,11 +19,7 @@ const NavBar = ({ isLight, toggleTheme }) => {
       </div>
       <div className="flex-2 flex flex-row mr-[1.5vw] items-center space-x-[4vw]">
         <div className="font-bebas flex items-center translate-y-[0.60vh] space-x-[2vw]">
-
-            <a href="" className="group h-[5vh] text-foreground transition text-[3vh] duration-200">
-                Projects
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[0.3vh] bg-foreground"></span>
-            </a>
+          
 
             <a href="" className="group h-[5vh] text-foreground transition text-[3vh] duration-250">
                 Resume
