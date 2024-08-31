@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ParticleEffect from "./components/particles";
 import React from "react";
+import { GlobalProvider, useGlobal } from '../context-providers/global-provider'
 
 import { motion } from "framer-motion";
 
@@ -11,6 +12,7 @@ import ExperiencePage from "./components/experience";
 
 export default function Home() {
   const [isLight, setIsLight] = useState(true);
+
 
   const toggleTheme = () => {
     setIsLight(!isLight);
@@ -38,7 +40,12 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    
+  })
+
   return (
+    <GlobalProvider>
     <div
       id="mainPage"
       className={`w-[100vw] min-h-[100vh] overflow-y-scroll transition-colors duration-300 bg-background ${
@@ -58,5 +65,6 @@ export default function Home() {
         <ParticleEffect isLight={isLight} />
       </div>
     </div>
+    </GlobalProvider>
   );
 }

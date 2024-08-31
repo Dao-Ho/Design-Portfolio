@@ -11,7 +11,7 @@ const ParticleEffect = ({isLight}) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const mouse = { x: null, y: null, radius: 10000 };
-    const gap = 12;
+    const gap = 15;
     const particlesArray = particlesArrayRef.current;
     ctxRef.current = ctx;
 

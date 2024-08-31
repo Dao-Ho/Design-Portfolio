@@ -1,6 +1,7 @@
 import { Inter, Bebas_Neue, Libre_Baskerville, Roboto, Roboto_Condensed, Oswald, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
