@@ -55,7 +55,19 @@ const Navbar = () => {
           <h1 className="text-[3vw] font-inter font-bold italic text-[#212121]">Dao Ho</h1>
         </div> */}
         <div className="flex pr-[3vw]">
+
         <div className="flex pr-[3vw] items-center h-full items-center">
+          
+          <a
+          href="/"
+          className={isMobile? 'font-roboto text-[3vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer'
+            : 'font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer'}>
+            Software Portfolio
+          </a>
+        </div>
+
+        <div className="flex pr-[3vw] items-center h-full items-center">
+          
           <Link
           to="artworks"
           spy={true}
@@ -64,8 +76,10 @@ const Navbar = () => {
             : 'font-roboto text-[1.5vw] font-bold transition ease-in-out delay-50 hover:scale-110 cursor-pointer'}>
             Works
           </Link>
-        </div>
+        </div> 
+
         <div className="flex pr-[3vw] items-center h-full items-center">
+          
           <Link
           to="about"
           spy={true}

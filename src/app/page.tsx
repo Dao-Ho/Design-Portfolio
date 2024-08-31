@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import NavBar from "./components/navBar";
 import FrontPage from "./components/front-page";
 import ExperiencePage from "./components/experience";
+import Footer from "./components/footer";
 
 export default function Home() {
   const [isLight, setIsLight] = useState(true);
@@ -60,8 +61,9 @@ export default function Home() {
         )}
         <FrontPage />
         <ExperiencePage />
+        <Footer />
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 ">
         <ParticleEffect isLight={isLight} />
       </div>
     </div>

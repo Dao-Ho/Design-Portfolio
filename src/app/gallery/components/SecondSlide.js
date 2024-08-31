@@ -6,6 +6,7 @@ import { motion, scrollRef} from "framer-motion";
 
 export const SecondSlide = () => {
   const scrollRef = useRef(null)
+  
 
   const pfp = () => {
     return (
