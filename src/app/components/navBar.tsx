@@ -26,7 +26,7 @@ const desktopNavBar = ({ isLight, toggleTheme }: { isLight: boolean; toggleTheme
         <div className="flex-2 flex flex-row mr-[1.5vw] items-center space-x-[4vw]">
           <div className="font-bebas flex items-center translate-y-[0.60vh] space-x-[2vw]">
             <a
-              href=""
+              href="https://drive.google.com/file/d/1AwWn-DCyuKv5cspaX0Oq_eBp_72Dz0Ou/view"
               className="group h-[5vh] text-foreground transition text-[3vh] duration-250"
             >
               Resume
