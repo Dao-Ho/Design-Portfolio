@@ -53,16 +53,16 @@ const mobilePage = () => (
     <div className="flex-1 flex flex-row items-center h-full w-full justify-center items-center">
     <div className="flex-1 w-[55vw] flex flex-col font-roboto mx-[1.75vw] mt-[15vh] items-center">   
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3 }}>
-            <h1 className="font-semibold text-[4vh] leading-[5vh]">Xin Chào,</h1>
+            <h1 className="font-semibold text-[7vw] leading-[5vh]">Xin Chào,</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.1 }}>
             <h1 className="font-bold text-[17vw] leading-[15vh]">I'm Dao Ho</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.2 }}>
-            <h1 className="font-semibold text-[3vh] leading-[6vh]">Software Engineer, Developer, and Artist.</h1>
+            <h1 className="font-semibold text-[5vw] leading-[6vw]">Software Engineer, Developer, and Artist.</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.3 }}>
-            <h1 className="font-semibold text-[2.5vh] leading-[5vh]">Northeastern '27, BS CS and Finance</h1>
+            <h1 className="font-semibold text-[4vw] leading-[6vh]">Northeastern '27, BS CS and Finance</h1>
         </motion.div>
     </div>
     </div>

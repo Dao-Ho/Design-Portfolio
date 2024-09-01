@@ -23,6 +23,10 @@ export default function Home() {
 
   //determines if the navbar should be shown
   const [isVisible, setIsVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+
+
 
   //determines if the navbar should be shown based on direction of the mouse scroll
   const determineNavbarVisibility = () => {
@@ -38,7 +42,16 @@ export default function Home() {
     window.addEventListener("scroll", determineNavbarVisibility);
     return () => {
       window.removeEventListener("scroll", determineNavbarVisibility);
+
+      //determines if the screen is mobile on load
+      if (window.innerWidth < window.innerHeight) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
     };
+
+
   }, []);
 
   useEffect(() => {
@@ -54,11 +67,17 @@ export default function Home() {
       }`}
     >
       <div className={`flex flex-col absolute z-20 w-[100vw] items-center`}>
-        {isVisible && (
+        {isMobile ? (
           <div className={`fixed z-20`}>
             <NavBar toggleTheme={toggleTheme} isLight={isLight} />
           </div>
-        )}
+        ) : (isVisible && (
+          <div className={`fixed z-20`}>
+            <NavBar toggleTheme={toggleTheme} isLight={isLight} />
+          </div>
+        ))}
+        
+        
         <FrontPage />
         <ExperiencePage />
         <Footer />

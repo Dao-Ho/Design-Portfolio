@@ -95,7 +95,7 @@ const mobileNavBar = ({ isLight, toggleTheme }: { isLight: boolean, toggleTheme:
               <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[0.3vh] bg-foreground"></span>
             </a>
           </div>
-          <Switch isChecked={!isLight} onChange={() => toggleTheme} />
+          <Switch isChecked={!isLight} onChange={toggleTheme} />
         </div>
       </div>
     </motion.div>

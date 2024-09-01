@@ -45,6 +45,16 @@ const ParticleEffect = ({isLight}) => {
       console.log("isLight :", isLight);
     };
 
+    //update coordinate to track touch position
+    const handleTouchMove = (e) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        mouse.x = touch.clientX;
+        mouse.y = touch.clientY;
+      }
+    };
+
+    window.addEventListener("touchmove", handleTouchMove);
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", resizeCanvas);
 
