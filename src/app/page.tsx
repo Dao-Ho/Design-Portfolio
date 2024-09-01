@@ -23,7 +23,7 @@ export default function Home() {
 
   //determines if the navbar should be shown
   const [isVisible, setIsVisible] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
 
 
