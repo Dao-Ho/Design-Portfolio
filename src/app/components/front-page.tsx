@@ -66,7 +66,7 @@ const mobilePage = () => (
         </motion.div>
     </div>
     </div>
-    <div className="flex flex-2 w-[10vw] translate-x-[90vw] h-[20vh]">
+    <div className="flex flex-2 w-[10vw] h-[20vh]">
        
        <motion.button initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.4 }} 
        onClick={() => {
