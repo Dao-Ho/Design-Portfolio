@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { MutableRefObject, useRef } from "react";
 
 import nusci from "../../../public/experience/nusci-current.png";
 import paynalli from "../../../public/experience/paynalli-systems-current.png";
@@ -9,17 +9,18 @@ import neu from "../../../public/experience/NEU-current.png";
 import generate from "../../../public/experience/generate-current.png";
 import { useGlobal } from "../../context-providers/global-provider";
 import { getEnabledExperimentalFeatures } from "next/dist/server/config";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const ExperiencePage = () => {
   const scrollRef = useRef(null);
   const { isMobile } = useGlobal();
 
   return isMobile
-    ? mobilePage(isMobile, scrollRef)
-    : desktopPage(isMobile, scrollRef);
+    ? mobilePage(scrollRef)
+    : desktopPage(scrollRef);
 };
 
-const desktopPage = (isMobile, scrollRef) => {
+const desktopPage = (scrollRef: MutableRefObject<null>) => {
   const styles = {
     allExperiencesContainer: `flex flex-col mt-[20vh] space-y-[25vh] mb-[25vh]`,
     experienceContainer: `space-x-[12vw] flex-row flex items-center font-sourceSans3 `,
@@ -31,7 +32,7 @@ const desktopPage = (isMobile, scrollRef) => {
     textContainer: `w-[20vw] flex flex-col justify-center`,
   };
 
-  const rightLogo = (companyName, role, summary, photo, link) => {
+  const rightLogo = (companyName: string, role: string, summary: string, photo: string | StaticImport, link: string | undefined) => {
     return (
       <div className={styles.experienceContainer}>
         <motion.div
@@ -60,7 +61,7 @@ const desktopPage = (isMobile, scrollRef) => {
     );
   };
 
-  const leftLogo = (companyName, role, summary, photo, link) => {
+  const leftLogo = (companyName: string, role: string, summary: string, photo: string | StaticImport, link: string | undefined) => {
     return (
       <div className={styles.experienceContainer}>
         <motion.div
@@ -134,7 +135,7 @@ const desktopPage = (isMobile, scrollRef) => {
   );
 };
 
-const mobilePage = (isMobile, scrollRef) => {
+const mobilePage = (scrollRef: MutableRefObject<null>) => {
   const styles = {
     allExperiencesContainer: `flex flex-col mt-[20vh] space-y-[25vh] mb-[25vh]`,
     experienceContainer: `flex-col flex items-center font-sourceSans3 `,
@@ -146,7 +147,7 @@ const mobilePage = (isMobile, scrollRef) => {
     textContainer: `w-[85vw] flex flex-col items-center justify-center`,
   };
 
-  const experience = (companyName, role, summary, photo, link) => {
+  const experience = (companyName: string, role: string, summary: string, photo: string | StaticImport, link: string | undefined) => {
     return (
       <div className={styles.experienceContainer}>
         <motion.div

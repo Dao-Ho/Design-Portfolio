@@ -9,11 +9,11 @@ interface GlobalContextType {
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined)
 
-export const GlobalProvider = ({ children }) => {
+export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
     //debounce to prevent the resize event from firing too often
-    const debounce = (func, delay) => {
+    const debounce = (func: { (): void; (): void; }, delay: number | undefined) => {
         let timeoutId: NodeJS.Timeout;
         return () => {
             clearTimeout(timeoutId);

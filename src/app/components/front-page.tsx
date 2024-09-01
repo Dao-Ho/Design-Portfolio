@@ -40,7 +40,7 @@ const desktopPage = () => (
        <motion.button initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.4 }} 
        onClick={() => {
            const anchor = document.querySelector('#experience')
-           anchor.scrollIntoView({ behavior: 'smooth', block: 'start' })
+           anchor?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
        className="text-[10vw] animate-bounce h-[5vh]">🢓
        </motion.button>
@@ -71,7 +71,7 @@ const mobilePage = () => (
        <motion.button initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.4 }} 
        onClick={() => {
            const anchor = document.querySelector('#experience')
-           anchor.scrollIntoView({ behavior: 'smooth', block: 'start' })
+           anchor?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
        className="text-[10vw] animate-bounce h-[5vh]">🢓
        </motion.button>

@@ -3,7 +3,7 @@
 import React from "react";
 import { useGlobal } from "../../context-providers/global-provider";
 
-export default function Switch({ isChecked, onChange }) {
+export default function Switch({ isChecked, onChange }: { isChecked: boolean, onChange: () => void }) {
   const {isMobile} = useGlobal();
     return (
       <div 
