@@ -54,7 +54,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable} ${fontOswald.variable} ${fontSourceSansPro.variable} scroll-smooth overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable} ${fontOswald.variable} ${fontSourceSansPro.variable} scroll-smooth overflow-x-none`}>{children}</body>
       <Analytics />
     </html>
     
