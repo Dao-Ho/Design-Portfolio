@@ -56,7 +56,7 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate"),
-    function({ addBase, theme }) {
+    function({ addBase, theme }: { addBase: any, theme: any }) {
       addBase({
         ':root': {
           '--background-color': theme('colors.light-background'),
