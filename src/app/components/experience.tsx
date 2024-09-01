@@ -54,7 +54,7 @@ const desktopPage = (scrollRef: MutableRefObject<null>) => {
           className={styles.photoContainer}
         >
           <a href={link}>
-            <Image src={photo} object="cover" layout="fill" sizes="" />
+            <Image src={photo} layout="fill" sizes="" alt={companyName} />
           </a>
         </motion.div>
       </div>
@@ -72,7 +72,7 @@ const desktopPage = (scrollRef: MutableRefObject<null>) => {
           className={styles.photoContainer}
         >
           <a href={link}>
-            <Image src={photo} object="cover" layout="fill" sizes="" />
+            <Image src={photo} alt={companyName} layout="fill" sizes="" />
           </a>
         </motion.div>
         <motion.div
@@ -169,7 +169,7 @@ const mobilePage = (scrollRef: MutableRefObject<null>) => {
           className={styles.photoContainer}
         >
           <a href={link}>
-            <Image src={photo} object="cover" layout="fill" sizes="" />
+            <Image src={photo} alt={companyName} layout="fill" sizes="" />
           </a>
         </motion.div>
       </div>

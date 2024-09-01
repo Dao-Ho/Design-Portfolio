@@ -32,7 +32,7 @@ const desktopPage = () => (
     </div>
     <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.3 }} 
     className="flex-2 relative mr-[10vw] text-[3vw] mt-[15vh] w-[25vw] h-[25vw] min-w-[40vh] min-h-[40vh] max-w-[55vh] max-h-[55vh] border-background border-[1.5vw] bg-foreground rounded-full">
-        <Image src={headshot} object="cover" layout="fill" sizes="" className="rounded-full" />
+        <Image src={headshot} alt={"headshot"} layout="fill" sizes="" className="rounded-full" />
     </motion.div>
     </div>
     <div className="flex flex-2 w-[10vw] translate-x-[90vw] h-[20vh]">

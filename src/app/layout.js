@@ -1,5 +1,6 @@
 import { Inter, Bebas_Neue, Libre_Baskerville, Roboto, Roboto_Condensed, Oswald, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
+import { Analytics } from "@vercel/analytics/react"
 
 
 const inter = Inter({
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${fontbebas.variable} ${fontlibre.variable} ${fontroboto.variable} ${fontRobotoCondensed.variable} ${fontOswald.variable} ${fontSourceSansPro.variable} scroll-smooth overflow-x-hidden`}>{children}</body>
+      <Analytics />
     </html>
     
   )
