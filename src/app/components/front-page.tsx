@@ -66,14 +66,14 @@ const mobilePage = () => (
         </motion.div>
     </div>
     </div>
-    <div className="flex flex-2 w-[10vw] h-[20vh]">
+    <div className="flex flex-2 w-[20vw] h-[20vh]">
        
        <motion.button initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.4 }} 
        onClick={() => {
            const anchor = document.querySelector('#experience')
            anchor?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-       className="text-[10vw] animate-bounce h-[5vh]">🢓
+       className="text-[4vw] font-roboto font-bold animate-bounce h-[2vh] "> see more
        </motion.button>
    </div>
 </div>
