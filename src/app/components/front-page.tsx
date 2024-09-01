@@ -56,10 +56,10 @@ const mobilePage = () => (
             <h1 className="font-semibold text-[7vw] leading-[5vh]">Xin Chào,</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.1 }}>
-            <h1 className="font-bold text-[17vw] leading-[15vh]">I'm Dao Ho</h1>
+            <h1 className="font-black text-[17vw] leading-[15vh]">I'm Dao Ho</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.2 }}>
-            <h1 className="font-semibold text-[4.5vw] leading-[6vw]">Software Engineer, Developer, and Artist.</h1>
+            <h1 className="font-semibold text-[4.75vw] leading-[6vw]">Software Engineer, Developer, and Artist.</h1>
         </motion.div>
         <motion.div initial={{y: 50, opacity: 0}} animate={{y:0, opacity:100}} transition={{ duration: 0.3, delay:0.3 }}>
             <h1 className="font-semibold text-[4vw] leading-[6vh]">Northeastern '27, BS CS and Finance</h1>
