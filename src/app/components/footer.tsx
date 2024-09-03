@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="flex-2 flex flex-row mr-[1.5vw] items-center space-x-[4vw]">
             <div className="font-bebas flex items-center translate-y-[0.60vh] space-x-[2vw]">
               <a
-                href=""
+                href="./Dao-Ho-resume.pdf"
                 className="group h-[5vh] text-foreground transition text-[3vh] duration-250"
               >
                 Resume
@@ -66,7 +66,7 @@ const Footer = () => {
           <div className="flex-2 flex flex-row mr-[2vw] items-center space-x-[4vw]">
             <div className="font-bebas flex items-center justify-center translate-y-[0.60vh] space-x-[2vw]">
               <a
-                href=""
+                href="./Dao-Ho-resume.pdf"
                 className={styles.mobileText}
               >
                 Resume
