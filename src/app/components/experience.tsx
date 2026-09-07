@@ -2,7 +2,6 @@
 
 import { MutableRefObject, useRef } from "react";
 import agencyLogoMap from "../../../public/Images/agency-logo-map.json";
-import nuscimagazineLogoMap from "../../../public/Images/nusci-logo-map.json";
 import neuLogoMap from "../../../public/Images/neu-logo-map.json";
 import paynalliSystemsLogoMap from "../../../public/Images/paynalli-systems-map.json";
 import designAiLogoMap from "../../../public/Images/design-ai-logo-map.json";
@@ -10,6 +9,7 @@ import ScrollReveal from "./scroll-reveal";
 import InteractiveLogoDots, { LogoMapConfig } from "./interactive-logo";
 import { useGlobal } from "../../lib/utils";
 import GoogleLogoMap from "../../../public/Images/google-logo-map.json";
+import { entrySlug } from "../data/sources";
 
 const experiences = [
     {
@@ -23,10 +23,12 @@ const experiences = [
     },
     {
         companyName: "Agency",
+        acquired: "Acquired by Klaviyo",
         role: "Member of Technical Staff Co-op",
         duration: "May 2025 - Dec 2025",
         yearRange: "May → Dec 2025",
-        summary: "Learned the meaning of tracer bullets, velocity, and what it takes to scale them.",
+        summary:
+            "Shipped to production daily. Learned the meaning of tracer bullets, velocity, and what it takes to scale them.",
         link: "https://www.agency.inc/",
         logoMap: agencyLogoMap,
     },
@@ -51,23 +53,13 @@ const experiences = [
         logoMap: paynalliSystemsLogoMap,
     },
     {
-        companyName: "NUSci Magazine",
-        role: "Junior Software Engineer",
-        duration: "Jan 2024 - Sept 2024",
-        yearRange: "Jan → Sept 2024",
-        summary:
-            "Worked with an awesome team of developers, helped architect scalable and robust database schema, secure API endpoints, responsive frontend designs, and rigorous tests. Developed a revamped website to improve user experience.",
-        link: "https://nuscimagazine.com/",
-        logoMap: nuscimagazineLogoMap,
-    },
-    {
         companyName: "Northeastern University",
         role: "Discrete Math Teaching Assistant",
         duration: "Sept 2023 - May 2024",
         yearRange: "Sept 2023 → May 2024",
         summary:
             "Led weekly office hours and teaching sessions to reinforce student understanding of course concepts. Provided additional resources and comprehensive grading feedback to students on homeworks and exams.",
-        link: "https://www.khoury.northeastern.edu/",
+        link: "https://www.khoury.northeastern.edu/home/aloupis/discrete-math/resources.html",
         logoMap: neuLogoMap,
     },
 ];
@@ -88,6 +80,8 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
         experienceContainer: "space-x-[12vw] flex-row flex items-center font-sourceSans3",
         textContainer: "w-[20vw] flex flex-col justify-center",
         companyName: "text-[2.75vw] leading-[3vw] font-bold font-playfairDisplay",
+        // An aside on the company, not a second title — hence the body face, italic.
+        acquired: "font-sourceSans3 italic text-[1vw] leading-[1.3vw] opacity-45 mt-[0.5vh]",
         duration: "font-semibold font-oswald text-[1vw] leading-[1.25vw]",
         role: "font-semibold font-oswald text-[1.5vw] mt-[0.5vh]",
         summary: "font-med text-[1.10vw] leading-[1.75vw] mt-[2vh] whitespace-pre-line",
@@ -95,6 +89,7 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
 
     const ExperienceItem = ({
         companyName,
+        acquired,
         role,
         summary,
         link,
@@ -104,6 +99,7 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
         logoMap,
     }: {
         companyName: string;
+        acquired?: string;
         role: string;
         summary: string;
         link: string;
@@ -125,6 +121,19 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
                     >
                         {companyName}
                     </ScrollReveal>
+
+                    {acquired && (
+                        <ScrollReveal
+                            scrollContainerRef={scrollRef}
+                            baseOpacity={0.1}
+                            baseRotation={1}
+                            blurStrength={5}
+                            enableBlur={true}
+                            className={styles.acquired}
+                        >
+                            {acquired}
+                        </ScrollReveal>
+                    )}
 
                     <ScrollReveal
                         scrollContainerRef={scrollRef}
@@ -168,7 +177,8 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
         );
 
         return (
-            <div className={styles.experienceContainer}>
+            // Landing target for the matching @-mention in the hero.
+            <div id={`experience-${entrySlug(companyName)}`} className={styles.experienceContainer}>
                 {isReversed ? (
                     <>
                         {logoContainer}
@@ -204,12 +214,14 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
 const MobilePage = ({ scrollRef }: { scrollRef: MutableRefObject<null> }) => {
     const MobileExperienceItem = ({
         companyName,
+        acquired,
         role,
         summary,
         yearRange,
         link,
     }: {
         companyName: string;
+        acquired?: string;
         role: string;
         summary: string;
         yearRange: string;
@@ -225,6 +237,7 @@ const MobilePage = ({ scrollRef }: { scrollRef: MutableRefObject<null> }) => {
                         <a href={link} className="underline hover:opacity-70 transition-opacity">
                             {companyName}
                         </a>
+                        {acquired && <span className="opacity-50"> ({acquired})</span>}
                         {" · "}
                         <span className="font-bold">{role}</span>
                     </span>
