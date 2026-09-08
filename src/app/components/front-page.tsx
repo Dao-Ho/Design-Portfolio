@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useGlobal } from "../../context-providers/global-provider";
 import GitHubContributions from "./contribution-graph";
 import { useRouter } from "next/navigation";
+import Cited from "./citation";
 
 const FrontPage = ({ isLight }: { isLight: boolean }) => {
     const { isMobile } = useGlobal();
@@ -12,17 +13,13 @@ const FrontPage = ({ isLight }: { isLight: boolean }) => {
 };
 
 const desktopPage = ({ isLight }: { isLight: boolean }) => {
-    const router = useRouter();
-    const CURRENT_EXPERIENCE_URL = "https://generatenu.com/";
     const CURRENT_EXPERIENCE = "Generate";
-    const handleCurrentExperienceRedirect = () => {
-        router.push(CURRENT_EXPERIENCE_URL);
-    };
+    const CURRENT_EXPERIENCE_URL = "https://generatenu.com/";
     return (
         <div className="flex flex-col h-[85vh] bg-transparent w-[100vw] px-[20vw] text-foreground">
             <div className="h-full w-full mt-40 flex flex-col">
                 <motion.div
-                    className="leading-[3vh]"
+                    className="cited-prose leading-[3vh]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -31,17 +28,40 @@ const desktopPage = ({ isLight }: { isLight: boolean }) => {
                     <h1 className="font-roboto text-[18px] ">
                         I'm a Software Engineer passionate about building the future.
                     </h1>
+                    <h1 className="font-roboto text-[18px] ">
+                        Previously @{" "}
+                        <Cited source="google" isLight={isLight}>
+                            Google
+                        </Cited>
+                        ,{" "}
+                        <Cited source="agency" isLight={isLight}>
+                            Agency
+                        </Cited>
+                        ,{" "}
+                        <Cited source="designai" isLight={isLight}>
+                            DesignAI
+                        </Cited>
+                        ,{" "}
+                        <Cited source="paynalli" isLight={isLight}>
+                            Paynalli
+                        </Cited>
+                        , and{" "}
+                        <Cited source="khoury" isLight={isLight}>
+                            Khoury
+                        </Cited>
+                        .
+                    </h1>
                     <h1 className="font-roboto text-[18px] ">Northeastern '27, Computer Science and Finance.</h1>
-                    <h1
-                        className="font-roboto text-[18px] "
-                        onClick={() => {
-                            handleCurrentExperienceRedirect();
-                        }}
-                    >
-                        Currently, building{" "}
-                        <span className="underline cursor-pointer hover:text-[#3c7cff] transition-colors">
+                    <h1 className="font-roboto text-[18px] ">
+                        Currently, building {/* Not a citation — this one just goes to the site, as it did before. */}
+                        <a
+                            href={CURRENT_EXPERIENCE_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline cursor-pointer text-foreground hover:text-text-hover"
+                        >
                             @{CURRENT_EXPERIENCE}
-                        </span>
+                        </a>
                     </h1>
                 </motion.div>
                 <motion.div
