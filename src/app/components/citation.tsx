@@ -160,8 +160,6 @@ const Cited = ({
                     <motion.span
                         initial={{ opacity: 0, y: 4 }}
                         animate={{ opacity: 1, y: 0 }}
-                        // Leaves quicker than it arrives — a card that lingers on
-                        // the way out reads as lag, not as easing.
                         exit={{ opacity: 0, y: 2, transition: { duration: 0.09, ease: "easeIn" } }}
                         transition={{ duration: 0.14, ease: "easeOut" }}
                         onClick={activate}
