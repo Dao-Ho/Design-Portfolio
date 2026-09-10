@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { SOURCES, entrySlug } from "../data/sources";
 
 const OPEN_DELAY = 55;
-const CLOSE_DELAY = 130;
+const CLOSE_DELAY = 30;
 const CARD_W = 382; // wide enough that the longest source name clears the date
 const MARK_PX = 30;
 
@@ -160,7 +160,7 @@ const Cited = ({
                     <motion.span
                         initial={{ opacity: 0, y: 4 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 4 }}
+                        exit={{ opacity: 0, y: 2, transition: { duration: 0.09, ease: "easeIn" } }}
                         transition={{ duration: 0.14, ease: "easeOut" }}
                         onClick={activate}
                         className="absolute left-0 top-full z-50 mt-[10px] flex flex-col rounded-2xl p-[18px] cursor-pointer text-foreground"
