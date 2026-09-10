@@ -7,6 +7,7 @@ import { useGlobal } from "../../context-providers/global-provider";
 import { AnimatedItem } from "../components/animated-list";
 import GlobalDock from "../components/global-dock";
 import MobileNav from "../components/mobile-nav";
+import Container from "../components/container";
 
 type Project = {
     index: string;
@@ -62,6 +63,8 @@ const projects: Project[] = [
 ];
 
 // Layout constants (all in viewport units, converted to px at runtime)
+// This page is deliberately full-bleed: the background runs edge to edge and the
+// content hugs the left, so it does not use the site's shared 20vw container.
 const CONTENT_X_VW = 5; // left offset of active content from edge
 const ACTIVE_HALF_H_VH = 14; // half-height of expanded active card
 const PILL_H_VH = 5; // pill height
@@ -96,13 +99,11 @@ function getItemPos(dist: number, vw: number, vh: number) {
 }
 
 export default function ProjectsRoute() {
-    const { isLight, toggleTheme } = useGlobal();
+    const { isLight, isMobile, toggleTheme } = useGlobal();
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isMobile, setIsMobile] = useState<boolean | null>(null);
     const [dims, setDims] = useState({ vw: 0, vh: 0 });
     useLayoutEffect(() => {
         const update = () => {
-            setIsMobile(window.innerWidth < 768);
             setDims({ vw: window.innerWidth / 100, vh: window.innerHeight / 100 });
         };
         update();
@@ -150,7 +151,7 @@ export default function ProjectsRoute() {
 
     return (
         <div
-            className={`w-[100vw] h-[100vh] overflow-hidden bg-background text-foreground ${isMobile ? (isLight ? "light" : "dark") : "dark"}`}
+            className={`h-screen w-full overflow-hidden bg-background text-foreground ${isMobile ? (isLight ? "light" : "dark") : "dark"}`}
         >
             {isMobile ? (
                 <MobileLayout isLight={isLight} toggleTheme={toggleTheme} />
@@ -293,9 +294,9 @@ function MobileLayout({ isLight, toggleTheme }: { isLight: boolean; toggleTheme:
     return (
         <div className="w-full h-full overflow-y-auto bg-background">
             <MobileNav isLight={isLight} toggleTheme={toggleTheme} />
-            <div className="flex flex-col px-[5vw] pt-[20vw] pb-[12vh]">
+            <Container as="main" className="flex flex-col pt-[20vw] pb-[12vh]">
                 {projects.map((project, i) => (
-                    <div key={project.index} className="flex flex-col pb-[16vw]">
+                    <article key={project.index} className="flex flex-col pb-[16vw]">
                         {/* Image */}
                         <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: "65vw" }}>
                             {project.background && (
@@ -332,9 +333,9 @@ function MobileLayout({ isLight, toggleTheme }: { isLight: boolean; toggleTheme:
                         >
                             View project
                         </a>
-                    </div>
+                    </article>
                 ))}
-            </div>
+            </Container>
         </div>
     );
 }

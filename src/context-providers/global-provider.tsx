@@ -8,6 +8,19 @@ interface GlobalContextType {
     toggleTheme: () => void;
 }
 
+/*
+ * The one definition of "mobile" in the app. Anything that branches on viewport
+ * reads `isMobile` from this provider rather than measuring window.innerWidth
+ * itself, so two sections can never disagree about which layout they are in.
+ *
+ * This is Tailwind's `lg` breakpoint. It MUST stay the exact complement of the
+ * prefix `Container` uses for its desktop gutter (`lg:`) — if the two flip at
+ * different widths, one viewport band renders the mobile layout with desktop
+ * gutters. Change both or neither.
+ */
+export const MOBILE_BREAKPOINT_PX = 1024;
+export const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT_PX - 1}px)`;
+
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
@@ -27,28 +40,15 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         });
     };
 
-    const debounce = (func: () => void, delay: number | undefined) => {
-        let timeoutId: NodeJS.Timeout;
-        return () => {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                func();
-            }, delay);
-        };
-    };
-
     useLayoutEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < window.innerHeight);
-        };
+        const query = window.matchMedia(MOBILE_QUERY);
+        const update = () => setIsMobile(query.matches);
 
-        const debouncedResize = debounce(handleResize, 200);
-
-        handleResize();
-        window.addEventListener("resize", debouncedResize);
+        update();
+        query.addEventListener("change", update);
 
         return () => {
-            window.removeEventListener("resize", debouncedResize);
+            query.removeEventListener("change", update);
         };
     }, []);
 
