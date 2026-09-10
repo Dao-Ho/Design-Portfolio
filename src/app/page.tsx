@@ -1,5 +1,4 @@
 "use client";
-import { useLayoutEffect, useState, useRef } from "react";
 import React from "react";
 import { useGlobal } from "../context-providers/global-provider";
 
@@ -9,34 +8,20 @@ import ExperiencePage from "./components/experience";
 import GlobalDock from "./components/global-dock";
 
 export default function Home() {
-    const { isLight, toggleTheme } = useGlobal();
-    const oldScrollY = useRef(0);
-    const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
-    useLayoutEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        oldScrollY.current = window.scrollY;
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const { isLight, isMobile, toggleTheme } = useGlobal();
 
     if (isMobile === null) return null;
 
     return (
         <div
             id="mainPage"
-            className={`w-[100vw] min-h-[100vh] overflow-y-scroll transition-colors duration-300 bg-background ${
-                isLight ? "light" : "dark"
-            }`}
+            className={`min-h-screen w-full bg-background transition-colors duration-300 ${isLight ? "light" : "dark"}`}
         >
-            <div className={`flex flex-col absolute z-20 w-[100vw] items-center`}>
-                {isMobile && <MobileNav isLight={isLight} toggleTheme={toggleTheme} />}
+            {isMobile && <MobileNav isLight={isLight} toggleTheme={toggleTheme} />}
+            <main className="relative z-20 flex flex-col">
                 <FrontPage isLight={isLight} />
                 <ExperiencePage isLight={isLight} />
-            </div>
+            </main>
             {!isMobile && <GlobalDock isLight={isLight} toggleTheme={toggleTheme} />}
         </div>
     );

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MutableRefObject, useRef, useEffect, useMemo, ReactNode } from "react";
+import { MutableRefObject, useRef, useEffect, useMemo, ReactNode, ElementType } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,6 +15,7 @@ interface ScrollRevealProps {
     baseRotation?: number;
     blurStrength?: number;
     className?: string;
+    as?: ElementType;
 }
 
 export default function ScrollReveal({
@@ -25,6 +26,7 @@ export default function ScrollReveal({
     baseRotation = 3,
     blurStrength = 4,
     className = "",
+    as: Component = "div",
 }: ScrollRevealProps): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -125,8 +127,8 @@ export default function ScrollReveal({
     }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, blurStrength]);
 
     return (
-        <div ref={containerRef} className={className}>
+        <Component ref={containerRef} className={className}>
             {splitText}
-        </div>
+        </Component>
     );
 }

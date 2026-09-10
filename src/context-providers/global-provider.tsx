@@ -8,6 +8,14 @@ interface GlobalContextType {
     toggleTheme: () => void;
 }
 
+/*
+ * The one definition of "mobile"; nothing else should measure window.innerWidth.
+ * Must stay the exact complement of Container's `lg:` gutter prefix, or one
+ * viewport band renders the mobile layout with desktop gutters.
+ */
+export const MOBILE_BREAKPOINT_PX = 1024;
+export const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT_PX - 1}px)`;
+
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
@@ -27,28 +35,15 @@ export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
         });
     };
 
-    const debounce = (func: () => void, delay: number | undefined) => {
-        let timeoutId: NodeJS.Timeout;
-        return () => {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                func();
-            }, delay);
-        };
-    };
-
     useLayoutEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < window.innerHeight);
-        };
+        const query = window.matchMedia(MOBILE_QUERY);
+        const update = () => setIsMobile(query.matches);
 
-        const debouncedResize = debounce(handleResize, 200);
-
-        handleResize();
-        window.addEventListener("resize", debouncedResize);
+        update();
+        query.addEventListener("change", update);
 
         return () => {
-            window.removeEventListener("resize", debouncedResize);
+            query.removeEventListener("change", update);
         };
     }, []);
 

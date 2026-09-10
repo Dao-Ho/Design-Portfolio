@@ -7,9 +7,10 @@ import paynalliSystemsLogoMap from "../../../public/Images/paynalli-systems-map.
 import designAiLogoMap from "../../../public/Images/design-ai-logo-map.json";
 import ScrollReveal from "./scroll-reveal";
 import InteractiveLogoDots, { LogoMapConfig } from "./interactive-logo";
-import { useGlobal } from "../../lib/utils";
+import { useGlobal } from "../../context-providers/global-provider";
 import GoogleLogoMap from "../../../public/Images/google-logo-map.json";
 import { entrySlug } from "../data/sources";
+import Container from "./container";
 
 const experiences = [
     {
@@ -74,11 +75,11 @@ const ExperiencePage = ({ isLight }: { isLight: boolean }) => {
 
 const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>; isLight: boolean }) => {
     const styles = {
-        parentContainer:
-            "w-[100vw] y-overflow overflow-hidden bg-background text-foreground transition-colors duration-300 flex justify-center",
-        allExperiencesContainer: "flex flex-col mt-[20vh] space-y-[25vh] mb-[25vh]",
-        experienceContainer: "space-x-[12vw] flex-row flex items-center font-sourceSans3",
-        textContainer: "w-[20vw] flex flex-col justify-center",
+        section: "w-full overflow-hidden bg-background text-foreground transition-colors duration-300",
+        allExperiencesContainer: "flex flex-col gap-y-[25vh] pt-[20vh] pb-[25vh]",
+        // Equal columns, so the text edge lands on the same 20vw as the hero.
+        experienceContainer: "grid grid-cols-2 items-center gap-x-[12vw] font-sourceSans3",
+        textContainer: "flex flex-col justify-center",
         companyName: "text-[2.75vw] leading-[3vw] font-bold font-playfairDisplay",
         // An aside on the company, not a second title — hence the body face, italic.
         acquired: "font-sourceSans3 italic text-[1vw] leading-[1.3vw] opacity-45 mt-[0.5vh]",
@@ -118,6 +119,7 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
                         blurStrength={5}
                         enableBlur={true}
                         className={styles.companyName}
+                        as="h2"
                     >
                         {companyName}
                     </ScrollReveal>
@@ -171,14 +173,14 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
         );
 
         const logoContainer = (
-            <div className="w-[22vw] h-[25vw] flex items-center justify-center">
+            <div className="h-[25vw] flex items-center justify-center">
                 <InteractiveLogoDots logoMap={logoMap} isLight={isLight} />
             </div>
         );
 
         return (
             // Landing target for the matching @-mention in the hero.
-            <div id={`experience-${entrySlug(companyName)}`} className={styles.experienceContainer}>
+            <article id={`experience-${entrySlug(companyName)}`} className={styles.experienceContainer}>
                 {isReversed ? (
                     <>
                         {logoContainer}
@@ -190,24 +192,26 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
                         {logoContainer}
                     </>
                 )}
-            </div>
+            </article>
         );
     };
 
     return (
-        <div className={styles.parentContainer}>
-            <div className={styles.allExperiencesContainer} id="experience">
-                {experiences.map((exp, index) => (
-                    <ExperienceItem
-                        key={index}
-                        {...exp}
-                        isReversed={index % 2 === 1}
-                        isLight={isLight}
-                        logoMap={exp.logoMap}
-                    />
-                ))}
-            </div>
-        </div>
+        <section id="experience" className={styles.section}>
+            <Container>
+                <div className={styles.allExperiencesContainer}>
+                    {experiences.map((exp, index) => (
+                        <ExperienceItem
+                            key={index}
+                            {...exp}
+                            isReversed={index % 2 === 1}
+                            isLight={isLight}
+                            logoMap={exp.logoMap}
+                        />
+                    ))}
+                </div>
+            </Container>
+        </section>
     );
 };
 
@@ -228,29 +232,28 @@ const MobilePage = ({ scrollRef }: { scrollRef: MutableRefObject<null> }) => {
         link: string;
     }) => {
         return (
-            <div className="mb-10">
+            <article className="mb-10">
                 <div className="mb-1">
                     <span className="font-inter text-[13px] text-foreground opacity-50">{yearRange}</span>
                 </div>
-                <div className="mb-3">
-                    <span className="font-inter text-[15px] text-foreground opacity-70">
-                        <a href={link} className="underline hover:opacity-70 transition-opacity">
-                            {companyName}
-                        </a>
-                        {acquired && <span className="opacity-50"> ({acquired})</span>}
-                        {" · "}
-                        <span className="font-bold">{role}</span>
-                    </span>
-                </div>
+                <h2 className="mb-3 font-inter text-[15px] text-foreground opacity-70">
+                    <a href={link} className="underline hover:opacity-70 transition-opacity">
+                        {companyName}
+                    </a>
+                    {acquired && <span className="opacity-50"> ({acquired})</span>}
+                    {" · "}
+                    <span className="font-bold">{role}</span>
+                </h2>
                 <p className="font-inter text-[15px] leading-relaxed text-foreground opacity-60">{summary}</p>
-            </div>
+            </article>
         );
     };
 
     return (
-        <div
-            className="w-[100vw] bg-background text-foreground transition-colors duration-300 px-6 pb-16"
+        <Container
+            as="section"
             id="experience"
+            className="bg-background pb-16 text-foreground transition-colors duration-300"
         >
             <div className="flex items-center gap-4 mb-8">
                 <span className="font-inter text-[15px] text-foreground opacity-40 shrink-0">Experience</span>
@@ -259,7 +262,7 @@ const MobilePage = ({ scrollRef }: { scrollRef: MutableRefObject<null> }) => {
             {experiences.map((exp, index) => (
                 <MobileExperienceItem key={index} {...exp} />
             ))}
-        </div>
+        </Container>
     );
 };
 
