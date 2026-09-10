@@ -77,8 +77,7 @@ const DesktopPage = ({ scrollRef, isLight }: { scrollRef: MutableRefObject<null>
     const styles = {
         section: "w-full overflow-hidden bg-background text-foreground transition-colors duration-300",
         allExperiencesContainer: "flex flex-col gap-y-[25vh] pt-[20vh] pb-[25vh]",
-        /* Two equal columns inside the shared container, so the text column's
-           outer edge lands on the same 20vw the hero uses. */
+        // Equal columns, so the text edge lands on the same 20vw as the hero.
         experienceContainer: "grid grid-cols-2 items-center gap-x-[12vw] font-sourceSans3",
         textContainer: "flex flex-col justify-center",
         companyName: "text-[2.75vw] leading-[3vw] font-bold font-playfairDisplay",

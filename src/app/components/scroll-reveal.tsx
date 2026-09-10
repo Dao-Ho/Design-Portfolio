@@ -15,8 +15,6 @@ interface ScrollRevealProps {
     baseRotation?: number;
     blurStrength?: number;
     className?: string;
-    /* Lets callers render the revealed text as a heading instead of a div,
-       so scroll animation does not force the markup to be non-semantic. */
     as?: ElementType;
 }
 

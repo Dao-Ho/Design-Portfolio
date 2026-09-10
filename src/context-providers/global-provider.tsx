@@ -9,14 +9,9 @@ interface GlobalContextType {
 }
 
 /*
- * The one definition of "mobile" in the app. Anything that branches on viewport
- * reads `isMobile` from this provider rather than measuring window.innerWidth
- * itself, so two sections can never disagree about which layout they are in.
- *
- * This is Tailwind's `lg` breakpoint. It MUST stay the exact complement of the
- * prefix `Container` uses for its desktop gutter (`lg:`) — if the two flip at
- * different widths, one viewport band renders the mobile layout with desktop
- * gutters. Change both or neither.
+ * The one definition of "mobile"; nothing else should measure window.innerWidth.
+ * Must stay the exact complement of Container's `lg:` gutter prefix, or one
+ * viewport band renders the mobile layout with desktop gutters.
  */
 export const MOBILE_BREAKPOINT_PX = 1024;
 export const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT_PX - 1}px)`;

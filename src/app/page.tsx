@@ -18,8 +18,6 @@ export default function Home() {
             className={`min-h-screen w-full bg-background transition-colors duration-300 ${isLight ? "light" : "dark"}`}
         >
             {isMobile && <MobileNav isLight={isLight} toggleTheme={toggleTheme} />}
-            {/* Sections stay in normal flow so the page grows with its content
-                and the document does the scrolling. */}
             <main className="relative z-20 flex flex-col">
                 <FrontPage isLight={isLight} />
                 <ExperiencePage isLight={isLight} />

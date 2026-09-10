@@ -63,8 +63,7 @@ const projects: Project[] = [
 ];
 
 // Layout constants (all in viewport units, converted to px at runtime)
-// This page is deliberately full-bleed: the background runs edge to edge and the
-// content hugs the left, so it does not use the site's shared 20vw container.
+// Deliberately full-bleed: content hugs the left, so no shared container here.
 const CONTENT_X_VW = 5; // left offset of active content from edge
 const ACTIVE_HALF_H_VH = 14; // half-height of expanded active card
 const PILL_H_VH = 5; // pill height

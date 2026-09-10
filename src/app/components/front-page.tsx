@@ -24,7 +24,6 @@ const desktopPage = ({ isLight }: { isLight: boolean }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
             >
-                {/* Only the greeting is the page heading; the rest is prose. */}
                 <h1 className="font-roboto text-[18px]">Xin chào, I'm Dao.</h1>
                 <p className="font-roboto text-[18px]">I'm a Software Engineer passionate about building the future.</p>
                 <p className="font-roboto text-[18px]">
